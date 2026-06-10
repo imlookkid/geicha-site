@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Geicha — Art of Pleasure · Japanese Matcha, Sencha & Hojicha</title>
 <meta name="description" content="Geicha: 100% first-flush Japanese green tea. Ceremonial matcha, premium matcha, sencha and hojicha from Uji, Kyoto, Kagoshima and Shizuoka. Ships from Thailand.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -30,10 +31,7 @@ a{color:inherit;text-decoration:none}
 /* header */
 header{position:sticky;top:0;z-index:50;background:rgba(242,240,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--stone)}
 .nav{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
-.brand{display:flex;align-items:center;gap:12px}
-.seal{width:42px;height:42px;border-radius:6px;background:var(--hanko);color:var(--paper);display:grid;place-items:center;font-family:'Shippori Mincho',serif;font-weight:800;font-size:15px;line-height:1.05;text-align:center;box-shadow:0 1px 0 rgba(0,0,0,.15);transform:rotate(-3deg)}
-.brand-name{font-family:'Shippori Mincho',serif;font-weight:600;font-size:22px;letter-spacing:.14em}
-.brand-name small{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:10px;letter-spacing:.32em;color:var(--moss);font-weight:500}
+.brand{display:flex;align-items:center}
 nav ul{display:flex;gap:32px;list-style:none;font-size:14px;letter-spacing:.08em}
 nav ul a{padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s}
 nav ul a:hover,nav ul a:focus-visible{border-color:var(--matcha)}
@@ -56,9 +54,9 @@ nav ul a:hover,nav ul a:focus-visible{border-color:var(--matcha)}
 .btn-ghost:hover{background:var(--ink);color:var(--paper)}
 .bowl-wrap{justify-self:center;position:relative}
 .bowl{width:min(380px,72vw);height:auto;display:block}
-.swirl{transform-origin:200px 200px;animation:spin 36s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.swirl{animation:none}}
+.hero-mark{animation:fadeUp 1s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero-mark{animation:none}}
 .bowl-caption{text-align:center;margin-top:14px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--moss)}
 
 /* strip */
@@ -84,9 +82,8 @@ section{padding:88px 24px}
 .card{background:#fff;border:1px solid var(--stone);border-radius:14px;padding:26px 24px 24px;display:flex;flex-direction:column;gap:12px;transition:transform .25s,box-shadow .25s;position:relative}
 .card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(21,36,26,.12)}
 .preorder-ribbon{position:absolute;top:16px;right:-8px;background:var(--hanko);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;padding:5px 12px;border-radius:4px 0 0 4px}
-.tin{align-self:center;width:110px;height:140px;border-radius:12px 12px 16px 16px;position:relative;display:grid;place-items:center;box-shadow:inset 0 -10px 18px rgba(0,0,0,.18),inset 0 8px 10px rgba(255,255,255,.25)}
-.tin::before{content:"";position:absolute;top:0;left:0;right:0;height:20px;border-radius:12px 12px 4px 4px;background:rgba(0,0,0,.14)}
-.tin .tin-kanji{font-family:'Shippori Mincho',serif;color:var(--paper);font-size:24px;writing-mode:vertical-rl;letter-spacing:.2em;font-weight:600;margin-top:8px}
+.photo{width:100%;height:auto;border-radius:10px;display:block;background:#ECEAE2;border:1px solid var(--stone)}
+.cupcost{font-size:12.5px;color:var(--moss);background:var(--matcha-light);border-radius:8px;padding:7px 12px;letter-spacing:.02em}
 .grade-tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--hanko);font-weight:700}
 .card h3{font-size:21px;font-weight:600}
 .headline{font-family:'Shippori Mincho',serif;font-size:14.5px;color:var(--moss);font-style:italic}
@@ -175,8 +172,7 @@ footer{background:var(--ink);color:var(--paper);padding:64px 24px 40px}
 <header>
   <div class="nav">
     <a class="brand" href="#top" aria-label="Geicha home">
-      <span class="seal" aria-hidden="true">芸茶</span>
-      <span class="brand-name">GEICHA<small>ART OF PLEASURE</small></span>
+      <img src="assets/geicha-wordmark-ink.png" alt="GEICHA — art of pleasure" style="height:34px;width:auto;display:block">
     </a>
     <nav aria-label="Main">
       <ul>
@@ -195,26 +191,9 @@ footer{background:var(--ink);color:var(--paper);padding:64px 24px 40px}
 <section class="hero">
   <p class="tategaki" aria-hidden="true">一番茶抹茶</p>
 
-  <div class="bowl-wrap" aria-hidden="true">
-    <svg class="bowl" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
-      <path d="M52 210 C52 330 132 392 200 392 C268 392 348 330 348 210 Z" fill="#2A2622"/>
-      <rect x="168" y="388" width="64" height="14" rx="7" fill="#1d1a17"/>
-      <ellipse cx="200" cy="210" rx="148" ry="44" fill="#7FA862"/>
-      <ellipse cx="200" cy="208" rx="148" ry="44" fill="#8FB573"/>
-      <g class="swirl" opacity=".85">
-        <g transform="translate(0,8) scale(1,0.3) translate(0,490)">
-          <path d="M200 200 m-120 0 a120 120 0 1 1 240 0 a120 120 0 1 1 -240 0" fill="none" stroke="#C9DCB3" stroke-width="5" stroke-dasharray="36 22" stroke-linecap="round"/>
-          <path d="M200 200 m-86 0 a86 86 0 1 1 172 0 a86 86 0 1 1 -172 0" fill="none" stroke="#B7D09A" stroke-width="5" stroke-dasharray="26 18" stroke-linecap="round"/>
-          <path d="M200 200 m-52 0 a52 52 0 1 1 104 0 a52 52 0 1 1 -104 0" fill="none" stroke="#C9DCB3" stroke-width="5" stroke-dasharray="18 14" stroke-linecap="round"/>
-          <circle cx="200" cy="200" r="14" fill="#C9DCB3"/>
-        </g>
-      </g>
-      <g transform="rotate(18 330 120)">
-        <rect x="322" y="40" width="14" height="70" rx="7" fill="#C8A064"/>
-        <path d="M316 108 C312 150 320 168 329 176 M324 108 C323 152 327 170 329 176 M342 108 C346 150 338 168 329 176 M334 108 C335 152 331 170 329 176" stroke="#E2C28C" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <p class="bowl-caption">Whisked, not stirred</p>
+  <div class="bowl-wrap">
+    <img class="bowl hero-mark" src="assets/geicha-mark-ink.png" alt="Geicha brand mark — a geisha sipping tea, with the kanji 芸茶">
+    <p class="bowl-caption">芸茶 · Art of Pleasure</p>
   </div>
 
   <div class="hero-copy">
@@ -272,8 +251,9 @@ footer{background:var(--ink);color:var(--paper);padding:64px 24px 40px}
           <tr><td>Sencha / Hojicha (Culinary)</td><td>40 g</td><td class="num">260.-</td><td class="num">240.-</td><td class="num">210.-</td><td class="num">65.-</td></tr>
           <tr><td>Sencha / Hojicha (Culinary)</td><td>200 g</td><td class="num">840.-</td><td class="num">760.-</td><td class="num">680.-</td><td class="num">—</td></tr>
           <tr><td>Sencha / Hojicha (Culinary)</td><td>1 kg</td><td class="num">3,500.-</td><td class="num">3,500.-</td><td class="num">3,330.-</td><td class="num">—</td></tr>
-          <tr><td>Uji Hojicha (Medium Roast)</td><td>40 g</td><td class="num">340.-</td><td class="num">300.-</td><td class="num">270.-</td><td class="num">85.-</td></tr>
-          <tr><td>Uji Hojicha (Medium Roast)</td><td>200 g</td><td class="num">1,080.-</td><td class="num">980.-</td><td class="num">860.-</td><td class="num">—</td></tr>
+          <tr><td>Uji Hojicha (Medium Roast)</td><td>40 g</td><td class="num">290.-</td><td class="num">ask</td><td class="num">ask</td><td class="num">65.-</td></tr>
+          <tr><td>Uji Hojicha (Medium Roast)</td><td>200 g</td><td class="num">920.-</td><td class="num">ask</td><td class="num">ask</td><td class="num">—</td></tr>
+          <tr><td>Uji Hojicha (Medium Roast)</td><td>1 kg</td><td class="num">3,800.-</td><td class="num">ask</td><td class="num">ask</td><td class="num">—</td></tr>
           <tr><td>Shiori Matcha (Premium)</td><td>40 g</td><td class="num">560.-</td><td class="num">510.-</td><td class="num">450.-</td><td class="num">140.-</td></tr>
           <tr><td>Shiori Matcha (Premium)</td><td>200 g</td><td class="num">1,800.-</td><td class="num">1,620.-</td><td class="num">1,440.-</td><td class="num">—</td></tr>
           <tr><td>Ceremonial Matcha (Kitami, Tsuyori, Midori, Kaori, Okuta)</td><td>40 g</td><td class="num">680.-</td><td class="num">610.-</td><td class="num">550.-</td><td class="num">170.-</td></tr>
@@ -285,7 +265,7 @@ footer{background:var(--ink);color:var(--paper);padding:64px 24px 40px}
         </tbody>
       </table>
     </div>
-    <p class="tbl-note">* Saemidori Single Origin Matcha is pre-order — shipping from June 2026. For larger wholesale volumes, contact our sales team.</p>
+    <p class="tbl-note">* Saemidori Single Cultivar Matcha is pre-order — shipping from June 2026. Okumidori Single Cultivar is ready to ship. Uji Hojicha 3/10-pc tier pricing: contact sales. For larger wholesale volumes, contact our sales team.</p>
   </div>
 </section>
 
@@ -328,7 +308,7 @@ footer{background:var(--ink);color:var(--paper);padding:64px 24px 40px}
         <span class="kanji">一番茶</span>
       </div>
       <p>Every Geicha tea is made exclusively from the first flush — the very first leaves of spring, when the plant is at its sweetest and most tender after a winter of rest.</p>
-      <p>We source from Japan's great tea regions: deep umami ceremonial matcha from Uji and Kyoto, gentle and nutty profiles from Kagoshima, and refined floral notes from Shizuoka. Each tea carries the character of its origin — which is why we let you taste a 10 g sampler before committing to a tin.</p>
+      <p>We source from Japan's great tea regions: deep umami ceremonial matcha from Uji and Kyoto, gentle and nutty profiles from Kagoshima, and refined floral notes from Shizuoka. Each tea carries the character of its origin — which is why we let you taste a 10 g sampler before committing to a full pouch.</p>
     </div>
     <div class="facts" aria-label="Tea facts">
       <div class="fact"><span class="k">Harvest</span><span class="v">100% First Flush</span></div>
@@ -345,9 +325,8 @@ footer{background:var(--ink);color:var(--paper);padding:64px 24px 40px}
 <footer>
   <div class="foot-inner">
     <div>
-      <a class="brand" href="#top" style="margin-bottom:14px;display:inline-flex">
-        <span class="seal" aria-hidden="true">芸茶</span>
-        <span class="brand-name" style="color:var(--paper)">GEICHA<small style="color:var(--matcha)">ART OF PLEASURE</small></span>
+      <a class="brand" href="#top" style="margin-bottom:18px;display:inline-flex" aria-label="Geicha home">
+        <img src="assets/geicha-wordmark-light.png" alt="GEICHA — art of pleasure" style="height:36px;width:auto;display:block">
       </a>
       <p>Premium Japanese green tea — 100% first-flush matcha, sencha and hojicha. Sales: 093-142-8538</p>
     </div>
@@ -395,53 +374,78 @@ footer{background:var(--ink);color:var(--paper);padding:64px 24px 40px}
 // ===== PRODUCT DATA (THAIFEX 2026 catalog — regular prices, THB) =====
 // prices: { "40g": x, "200g": y, "1kg": z }, sampler: 10g price
 const products = [
-  {id:'sencha', kanji:'煎', tin:'#6B8E4E', cat:'Culinary', grade:'Culinary', name:'Geicha Sencha',
+  // ===== Data source: Geicha product cards, April 2026 =====
+  {id:'sencha', img:'assets/products/sencha.jpg', cat:'Culinary', grade:'Culinary', name:'Geicha Sencha',
    headline:'Nutty. Marine. Everyday.', origin:'Kagoshima',
-   notes:'Nutty · light seaweed · slight bitterness', use:'Best for drinks & desserts',
+   notes:'Nutty with hint of seaweed · mild bitterness',
+   cultivars:'Yutakamidori, Saemidori, Okumidori',
+   use:'Best for drinks & desserts',
    prices:{'40g':260,'200g':840,'1kg':3500}, sampler:65},
-  {id:'hojicha', kanji:'焙', tin:'#8A6A3B', cat:'Roasted', grade:'Light + Dark Roast', name:'Geicha Hojicha',
+  {id:'hojicha', img:'assets/products/hojicha.jpg', cat:'Roasted', grade:'Hojicha · Premium', name:'Geicha Hojicha',
    headline:'Smoky. Nutty. Mildly Sweet.', origin:'Kyoto',
-   notes:'Smoky nuttiness · gentle sweetness', use:'Best for lattes & baking',
+   notes:'Tasty · nutty smoke · mild sweetness',
+   cultivars:'Mainly Yabukita',
+   use:'Best for lattes & baking',
    prices:{'40g':260,'200g':840,'1kg':3500}, sampler:65},
-  {id:'uji-hojicha', kanji:'宇', tin:'#7A5A2E', cat:'Roasted', grade:'Medium Roast', name:'Geicha Uji Hojicha',
+  {id:'uji-hojicha', img:'assets/products/uji-hojicha.jpg', cat:'Roasted', grade:'Hojicha · Medium Roast', name:'Geicha Uji Hojicha',
    headline:'Rich. Smoky. Rounded.', origin:'Uji',
-   notes:'Deep smoky nuttiness · gentle sweetness', use:'Best for hojicha lattes & desserts',
-   prices:{'40g':340,'200g':1080,'1kg':4500}, sampler:85},
-  {id:'shiori', kanji:'栞', tin:'#5E8A4A', cat:'Premium', grade:'Premium', name:'Geicha Shiori Matcha',
+   notes:'Tasty · nutty smoke · mild sweetness',
+   cultivars:'Mainly Yabukita',
+   use:'Best for hojicha lattes & desserts',
+   prices:{'40g':290,'200g':920,'1kg':3800}, sampler:65},
+  {id:'shiori', img:'assets/products/shiori.jpg', cat:'Premium', grade:'Matcha · Premium', name:'Geicha Shiori Matcha',
    headline:'Grassy. Vegetal. Fresh.', origin:'Kagoshima',
-   notes:'Fresh-cut grass · vegetal · refreshing finish', use:'Best for daily matcha & iced lattes',
+   notes:'Grassy · vegetal · refreshing',
+   cultivars:'Yabukita, Yutakamidori, Sayamakaori, Asanoka, Kanayamidori',
+   use:'Best for daily matcha & iced lattes',
    prices:{'40g':560,'200g':1800,'1kg':7500}, sampler:140},
-  {id:'kitami', kanji:'北', tin:'#3E5C3A', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Kitami Matcha',
+  {id:'kitami', img:'assets/products/kitami.jpg', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Kitami Matcha',
    headline:'Nutty. Roasted. Bold.', origin:'Kyoto',
-   notes:'Nutty · roasted peanut · toasted grain', use:'Best for koicha & straight drinking',
+   notes:'Nutty · roasted peanuts · burnt grains',
+   cultivars:'Yabukita, Gokou, Samidori, Saemidori, Okumidori',
+   use:'Best for koicha & straight drinking',
    prices:{'40g':680,'200g':2040,'1kg':8500}, sampler:170},
-  {id:'tsuyori', kanji:'露', tin:'#3E5C3A', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Tsuyori Matcha',
+  {id:'tsuyori', img:'assets/products/tsuyori.jpg', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Tsuyori Matcha',
    headline:'Floral. Balanced. Refined.', origin:'Shizuoka',
-   notes:'Nutty · soft florals · slight bitterness', use:'Best for usucha & tasting flights',
+   notes:'Nutty with hint of floral · mild bitterness',
+   cultivars:'Tsuyuhikari, Okumidori, Saemidori, Yutakamidori',
+   use:'Best for usucha & tasting flights',
    prices:{'40g':680,'200g':2040,'1kg':8500}, sampler:170},
-  {id:'midori', kanji:'緑', tin:'#3E5C3A', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Midori Matcha',
+  {id:'midori', img:'assets/products/midori.jpg', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Midori Matcha',
    headline:'Nutty. Gentle. Umami.', origin:'Kagoshima',
-   notes:'Nutty · gentle · deep umami', use:'Best for first-time ceremonial drinkers',
+   notes:'Nutty · mild · umami',
+   cultivars:'Yutakamidori, Saemidori, Okumidori',
+   use:'Best for first-time ceremonial drinkers',
    prices:{'40g':680,'200g':2040,'1kg':8500}, sampler:170},
-  {id:'kaori', kanji:'香', tin:'#3E5C3A', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Kaori Matcha',
-   headline:'Intense. Floral. Sweet.', origin:'Kagoshima',
-   notes:'Intense · nutty · floral · mildly sweet', use:'Best for signature café drinks',
+  {id:'kaori', img:'assets/products/kaori.jpg', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Kaori Matcha',
+   headline:'Rich. Floral. Sweet.', origin:'Kagoshima',
+   notes:'Rich · nutty with hint of floral · mild sweetness',
+   cultivars:'Yutakamidori, Yabukita, Asanoka, Saemidori, Kanaemidori',
+   use:'Best for signature café drinks',
    prices:{'40g':680,'200g':2040,'1kg':8500}, sampler:170},
-  {id:'okuta', kanji:'奥', tin:'#3E5C3A', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Okuta Matcha',
+  {id:'okuta', img:'assets/products/okuta.jpg', cat:'Ceremonial', grade:'Ceremonial · 100% First Flush', name:'Geicha Okuta Matcha',
    headline:'Deep. Earthy. Umami.', origin:'Uji, Kyoto',
-   notes:'Seaweed · gentle · rich umami', use:'Best for umami lovers & koicha',
+   notes:'Seaweed · mild · umami',
+   cultivars:'Yabukita, Okumidori',
+   use:'Best for umami lovers & koicha',
    prices:{'40g':680,'200g':2040,'1kg':8500}, sampler:170},
-  {id:'saemidori', kanji:'冴', tin:'#15241A', cat:'Single Origin', grade:'Single Origin · Ceremonial', name:'Saemidori Matcha',
+  {id:'saemidori', img:'assets/products/saemidori.jpg', cat:'Single Origin', grade:'Single Cultivar · Ceremonial', name:'Saemidori Matcha',
    headline:'Rare. Nutty. Toasted.', origin:'Kagoshima',
-   notes:'Nutty · roasted peanut · toasted grain', use:'Single-cultivar — for collectors & connoisseurs',
-   prices:{'40g':760,'200g':2280,'1kg':9500}, sampler:190, preorder:'Pre-order · ships June 2026'},
-  {id:'okumidori', kanji:'奥緑', tin:'#15241A', cat:'Single Origin', grade:'Single Origin · Ceremonial', name:'Okumidori Matcha',
-   headline:'Floral. Umami. Mildly Sweet.', origin:'Uji',
-   notes:'Nutty · floral · umami · mild sweetness', use:'Single-cultivar — elegant & layered',
+   notes:'Nutty roasted peanuts · burnt grains',
+   cultivars:'Saemidori (single cultivar)',
+   use:'Single-cultivar — for collectors & connoisseurs',
+   prices:{'40g':760,'200g':2280,'1kg':9500}, sampler:190, preorder:'Pre-order · ships 06/2026'},
+  {id:'okumidori', img:'assets/products/okumidori.jpg', cat:'Single Origin', grade:'Single Cultivar · Ceremonial', name:'Okumidori Matcha',
+   headline:'Floral. Umami. Mildly Sweet.', origin:'Uji, Kyoto',
+   notes:'Nutty with hint of floral · umami · mild sweetness',
+   cultivars:'Okumidori (single cultivar)',
+   use:'Single-cultivar — elegant & layered',
    prices:{'40g':760,'200g':2280,'1kg':9500}, sampler:190},
 ];
 
 const fmt = n => '฿' + n.toLocaleString('en-US');
+const grams = s => s==='1kg' ? 1000 : parseInt(s);
+const perCup = (price, g, gPerCup) => Math.round(price / (g / gPerCup));
 const cart = {};            // key: id|size -> qty
 const selSize = {};         // id -> selected size
 const grid = document.getElementById('productGrid');
@@ -449,18 +453,22 @@ const grid = document.getElementById('productGrid');
 function cardHTML(p){
   const sizes = Object.keys(p.prices);
   const sel = selSize[p.id] || sizes[0];
+  const g = grams(sel);
+  const isHoji = p.cat === 'Roasted';
+  const drink = isHoji ? 'hojicha' : (p.id==='sencha' ? 'sencha' : 'matcha');
   return `
   <article class="card" data-cat="${p.cat}">
     ${p.preorder ? `<span class="preorder-ribbon">PRE-ORDER</span>` : ''}
-    <div class="tin" style="background:${p.tin}"><span class="tin-kanji">${p.kanji}</span></div>
+    <img class="photo" src="${p.img}" alt="${p.name} — 40 g and 200 g pouches" loading="lazy">
     <span class="grade-tag">${p.grade}</span>
     <h3>${p.name}</h3>
     <p class="headline">${p.headline}</p>
     <p class="origin">${p.origin}, Japan</p>
-    <p class="notes"><b>Taste:</b> ${p.notes}<br><b>Use:</b> ${p.use}</p>
+    <p class="notes"><b>Taste:</b> ${p.notes}<br><b>Cultivars:</b> ${p.cultivars}<br><b>Use:</b> ${p.use}</p>
     <div class="sizes-row" role="group" aria-label="Choose size">
       ${sizes.map(s => `<button class="size-btn ${s===sel?'sel':''}" data-id="${p.id}" data-size="${s}">${s}<small>${fmt(p.prices[s])}</small></button>`).join('')}
     </div>
+    <p class="cupcost">≈ ${fmt(perCup(p.prices[sel], g, 3))}/cup clear ${drink} · ${fmt(perCup(p.prices[sel], g, 5))}/cup latte</p>
     <div class="card-foot">
       <span class="price">${fmt(p.prices[sel])} <small>/ ${sel}</small></span>
       <button class="add" data-id="${p.id}">Add to cart</button>
